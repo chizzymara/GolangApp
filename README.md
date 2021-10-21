@@ -1,4 +1,3 @@
-https://mholt.github.io/json-to-go/
 
 # Golang-Epic-Api
 
@@ -9,3 +8,36 @@ The application retrieves information about the current free games on the websit
 2. Creating a function "Get free games" that makes a GET api call to the website to  retrieve the response payload, have a loop that goes through the elements and identifying items with the "discountPercentage" of zero, in the "discountSetting".
 3. Identified games are added to the "FreeGames" array.
 4.  Function  "Main" and "SendSlackNotification" are used to send the contents of the "FreeGames" array to "SLACK_URL"
+
+
+## _Requirement_
+Slack url stored as an environmental variable.
+```sh
+export SLACK_URL="https://hooks.slack.com/services/avcdefghijk/lmnbvcza/hhgwdsvfsffa"
+```
+
+## _How to use_
+There are three ways to make the app run:
+
+1  Using the go run comand.
+```sh
+go run epic.go
+```
+
+2  Using the make comand.
+```sh
+make
+```
+3  Using the docker file.
+
+- First build the image:
+```sh
+docker build -t golangapp:v1 .   
+```
+
+- Then run the image with the environmental variable:
+```sh
+docker run -e SLACK_URL=$SLACK_URL golangapp:v1   
+```
+
+## _Further Improvements_
