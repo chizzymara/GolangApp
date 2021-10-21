@@ -39,5 +39,22 @@ docker build -t golangapp:v1 .
 ```sh
 docker run -e SLACK_URL=$SLACK_URL golangapp:v1   
 ```
+4  Using Kubernetes.
+
+- Add the Slack app URL to the kubernetes/secret.yaml file:
+- create the namespace:
+```sh
+kubectl apply -f    kubernetes/namespace.yaml
+```
+- create the secret:
+```sh
+kubectl apply -f    kubernetes/secret.yaml
+```
+- create the cronjob:
+```sh
+kubectl apply -f    kubernetes/cronjob.yaml
+```
 
 ## _Further Improvements_
+- Add unit test
+- Add terraform module to deploy on AWS Lambda (Event bridge trigger)

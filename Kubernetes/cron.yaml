@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goapp
+  namespace: myapp
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: go-container
+            image: chizzymara/goapp:v1
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: SLACK_URL
+                valueFrom: 
+                  secretKeyRef:
+                    key: slack-sec
+                    name: goapp-secret
+                    optional: false
+          restartPolicy: OnFailure
