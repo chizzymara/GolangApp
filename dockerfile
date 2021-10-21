@@ -1,9 +1,9 @@
-FROM golang
+FROM golang:1.16-alpine
 
 WORKDIR /goapp
 
 COPY . /goapp
 
-RUN apt-get update && apt-get install make
+RUN apk add --update  make
 
 ENTRYPOINT [ "make" ]

@@ -67,6 +67,7 @@ func main() {
 	// Slack message
 	message := " Hurry the following games are free: \n" + freeGames
 	err := SendSlackNotification(webhookUrl, message)
+	fmt.Println(message)
 	if err != nil {
 		log.Fatal(err)
 	}
