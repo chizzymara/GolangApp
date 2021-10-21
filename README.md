@@ -8,6 +8,9 @@ The application retrieves information about the current free games on the websit
 2. Creating a function "Get free games" that makes a GET api call to the website to  retrieve the response payload, have a loop that goes through the elements and identifying items with the "discountPercentage" of zero, in the "discountSetting".
 3. Identified games are added to the "FreeGames" array.
 4.  Function  "Main" and "SendSlackNotification" are used to send the contents of the "FreeGames" array to "SLACK_URL"
+5. A make file was created to make it easier to run the app by simply using the "make" command.
+6. A docker file was created to make a docker image and container of the application.
+7. The application was also deployed using Kubernetes.
 
 
 ## _Requirement_
