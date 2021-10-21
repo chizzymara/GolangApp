@@ -43,4 +43,8 @@ docker build -t golangapp:v1 .
 docker run -e SLACK_URL=$SLACK_URL golangapp:v1   
 ```
 
+Alternatively, the image can be pulled from docker hub to to skip the first step above.
+```sh
+docker pull chizzymara/goapp  
+```
 ## _Further Improvements_
