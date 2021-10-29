@@ -20,7 +20,7 @@ export SLACK_URL="https://hooks.slack.com/services/avcdefghijk/lmnbvcza/hhgwdsvf
 ```
 
 ## _How to use_
-There are three ways to make the app run:
+There are four ways to make the app run:
 
 1  Using the go run comand.
 ```sh
@@ -40,8 +40,14 @@ docker build -t golangapp:v1 .
 
 - Then run the image with the environmental variable:
 ```sh
-docker run -e SLACK_URL=$SLACK_URL golangapp:v1   
+docker run -e SLACK_URL=$SLACK_URL golangapp:v1  
 ```
+
+Alternatively, the image can be pulled from docker hub to to skip the first step above.
+```sh
+docker pull chizzymara/goapp  
+```
+
 4  Using Kubernetes.
 
 - Add the Slack app URL to the kubernetes/secret.yaml file:
@@ -58,10 +64,7 @@ kubectl apply -f    kubernetes/secret.yaml
 kubectl apply -f    kubernetes/cronjob.yaml
 ```
 
-Alternatively, the image can be pulled from docker hub to to skip the first step above.
-```sh
-docker pull chizzymara/goapp  
-```
+
 ## _Further Improvements_
 - Add unit test
 - Add terraform module to deploy on AWS Lambda (Event bridge trigger)
