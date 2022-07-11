@@ -69,4 +69,3 @@ kubectl apply -f    kubernetes/cronjob.yaml
 - Add unit test
 - Add terraform module to deploy on AWS Lambda (Event bridge trigger)
 
-testing forks
